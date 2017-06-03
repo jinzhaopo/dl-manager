@@ -1,7 +1,11 @@
 package com.yundao.manager.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * 
@@ -21,12 +25,34 @@ public class LoginController extends BaseController {
 	 * @return
 	 * @return: String
 	 */
-	@RequestMapping(value = { "/", "/login" })
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
 		return "login";
 	}
 
-	@RequestMapping(value = "/index")
+	/**
+	 * 
+	 * @Title: login
+	 * @Description: 页面登入
+	 * @param request
+	 * @param model
+	 * @return
+	 * @return: String
+	 */
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(HttpServletRequest request, Model model) {
+
+		return "/login";
+	}
+
+	/**
+	 * 
+	 * @Title: index
+	 * @Description: TODO
+	 * @return
+	 * @return: String
+	 */
+	@RequestMapping(value = { "/index", "/" })
 	public String index() {
 		return "index";
 	}
