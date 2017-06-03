@@ -25,4 +25,9 @@ public class LoginController extends BaseController {
 	public String login() {
 		return "login";
 	}
+
+	@RequestMapping(value = "/index")
+	public String index() {
+		return "index";
+	}
 }
