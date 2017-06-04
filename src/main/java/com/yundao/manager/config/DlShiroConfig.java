@@ -31,7 +31,7 @@ public class DlShiroConfig extends ShiroConfig {
 	@Override
 	public MyShiroRealm myShiroRealm() {
 		DlShiroRealm myShiroRealm = new DlShiroRealm();
-		myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
+		myShiroRealm.setCredentialsMatcher(getMyCredentialsMatcher());
 		return myShiroRealm;
 	}
 
