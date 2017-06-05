@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableConfigurationProperties
 @ComponentScan(basePackages = { "com.jzp.framework", "com.yundao.manager" })
-@ServletComponentScan(basePackages = { "com.jzp.framework" })
+@ServletComponentScan(basePackages = { "com.jzp.framework","com.yundao.manager" })
 @MapperScan(basePackages = { "com.yundao.manager.mapper" })
 public class Application {
 

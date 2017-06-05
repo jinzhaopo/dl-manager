@@ -28,8 +28,8 @@ public class LoginController extends BaseController {
 	 * @return: String
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login() {
-		return "login";
+	public String login(Model model) {
+		return "common/login";
 	}
 
 	/**
