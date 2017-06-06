@@ -8,13 +8,13 @@ ul,li {
 
 center {
 	background: url(../img/loginBook.png);
-	width: 452px;
-	height: 557px;
+	width: 403px;
+	height: 302px;
 	margin: 186px auto 0px auto;
 }
 
 center ul {
-	padding-top: 250px;
+	padding-top: 90px;
 	margin: 0px auto;
 	width: 270px;
 }
