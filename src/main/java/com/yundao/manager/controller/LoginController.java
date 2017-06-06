@@ -65,15 +65,4 @@ public class LoginController extends BaseController {
 		return "/login";
 	}
 
-	/**
-	 * 
-	 * @Title: index
-	 * @Description: TODO
-	 * @return
-	 * @return: String
-	 */
-	@RequestMapping(value = { "/index", "/" })
-	public String index() {
-		return "index";
-	}
 }

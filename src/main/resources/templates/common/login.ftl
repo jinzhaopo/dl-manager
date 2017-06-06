@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<link rel="stylesheet" href="${base}/css/login.css" />
 		<script type="text/javascript" src="${base}/js/jquery-1.8.3.js"></script>
@@ -9,14 +10,14 @@
 			$(function() {
 				//根据ip的失败次数判断是否要显示验证码
 				var ipFailCount = "${ipFailCount!5}";
-				if(ipFailCount >= 2){
+				if(ipFailCount >= 2) {
 					showCaptcha();
-				}else{
+				} else {
 					hideCaptcha();
 				}
-				
+
 				$('center').css({
-					"margin-top" : ($('html').height() - 200) * 0.5 + "px"
+					"margin-top": ($('html').height() - 200) * 0.5 + "px"
 				});
 				//refreshCaptchaImage();
 			});
@@ -26,13 +27,11 @@
 			function refreshCaptchaImage() {
 				var $captchaImage = $("#captchaImage");
 				// 刷新验证码
-				$captchaImage.attr("src","${base}/common/captcha?captchaId=${captchaId}&timestamp="+ (new Date()).valueOf());
+				$captchaImage.attr("src", "${base}/common/captcha?captchaId=${captchaId}&timestamp=" + (new Date()).valueOf());
 			};
 			/**
-			*	提交
-			*/
-			
-		
+			 *	提交
+			 */
 		</script>
 		<style type="text/css">
 			.j_captcha {
