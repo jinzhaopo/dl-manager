@@ -3,11 +3,11 @@
 
 	<head>
 		<title>xxxxxxxxx</title>
-		<link rel="stylesheet" media="screen" href="${base}/static/404/_css/style.css" type="text/css" />
-		<link rel="shortcut icon" type="${base}/static/404/image/x-icon" href="favicon.png" />
-		<link rel="icon" type="${base}/static/404/image/x-icon" href="favicon.png" />
-		<link rel="apple-touch-icon" href="${base}/static/404/favicon.png" />
-		<link rel="apple-touch-startup-image" href="${base}/static/404/favicon.png" />
+		<link rel="stylesheet" media="screen" href="${base}/css/404/_css/style.css" type="text/css" />
+		<link rel="shortcut icon" type="${base}/css/404/image/x-icon" href="favicon.png" />
+		<link rel="icon" type="${base}/css/404/image/x-icon" href="favicon.png" />
+		<link rel="apple-touch-icon" href="${base}/css/404/favicon.png" />
+		<link rel="apple-touch-startup-image" href="${base}/css/404/favicon.png" />
 	</head>
 
 	<body>

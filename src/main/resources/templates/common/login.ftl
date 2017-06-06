@@ -27,7 +27,7 @@
 				var $captchaImage = $("#captchaImage");
 				$captchaImage.click(function() {// 刷新验证码
 					$captchaImage.attr("src",
-							"<%=request.getContextPath()%>/admin/common/captcha.do?captchaId=${captchaId}timestamp="+ (new Date()).valueOf());
+							"${base}/admin/common/captcha.do?captchaId=${captchaId}timestamp="+ (new Date()).valueOf());
 				});
 			};
 		
