@@ -1,6 +1,10 @@
 package com.yundao.manager.controller;
 
+import org.apache.shiro.SecurityUtils;
+
+import com.jzp.framework.config.shiro.ShiroConfig;
 import com.jzp.framework.mvc.StandardController;
+import com.yundao.manager.model.rbac.Admin;
 
 /**
  * 

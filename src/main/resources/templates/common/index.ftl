@@ -11,7 +11,7 @@
 			<div>
 				<a onclick="" class="icon-user" title="修改信息"> </a>
 				<a class="icon-switch" title="退出" href="${base}/logout"> </a> <span>
-			Version  </span>
+			Version </span>
 			</div>
 			<h1>
 				<a href="#"> 云图书馆决策支持系统 </a>

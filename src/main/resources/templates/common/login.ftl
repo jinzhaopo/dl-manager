@@ -44,12 +44,13 @@
 		<center>
 			<form action="${base}/login" method="POST">
 				<input type="hidden" name="captchaId" value="${captchaId}">
+				${currnt_admin.name}
 				<ul>
-					<li><span>用户名:</span><input name="userName" type="text" placeholder="请输入用户名" value="${message_prompt.type }" required="required" /></li>
+					<li><span>用户名:</span><input name="username" type="text" placeholder="请输入用户名" value="${message_prompt.type }" required="required" /></li>
 					<li><span>密&nbsp;&nbsp;码:</span><input name="password" required="required" type="password" placeholder="请输入密码" /></li>
 					<li id="j_captcha_li"><span>验证码:</span><input name="j_captcha" class="j_captcha" placeholder="请输入验证码" /><img id="captchaImage" onclick="refreshCaptchaImage();" src="${base}/common/captcha?captchaId=${captchaId}" alt="换一张" /></li>
 					<li><span></span>
-						<button type="button" onclick="submitForm();">登 录</button></li>
+						<button type="submit">登 录</button></li>
 					<li style="padding-top: 20px;">
 						<span></span><span style="color: red;width:190px">${error}</span>
 					</li>

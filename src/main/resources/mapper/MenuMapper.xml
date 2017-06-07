@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yundao.manager.mapper.MenuMapper" >
+<mapper namespace="com.yundao.manager.mapper.MenuMapper">
 
-	
+	<resultMap id="getMenuWithOperateMap" type="com.yundao.manager.bean.MenuAndOperate">
+		<id column="menuId" property="menu_id" />
+		<result column="menuName" property="menu_name" />
+		<result column="menuIcon" property="menu_icon" />
+		<result column="upMenuId" property="up_menu_id" />
+		<result column="operateName" property="operate_name" />
+		<result column="btnIcon" property="btn_icon" />
+		<result column="html" property="html" />
+		<result column="diaplayInToolBar" property="diaplay_in_tool_bar" />
+	</resultMap>
+
+
+	<select id="getMenuWithOperate" resultMap="getMenuWithOperateMap">
+		SELECT
+			menu.id AS menu_id,
+			menu. NAME AS menu_name,
+			menu_icon,
+			up_menu_id,
+			operate. NAME AS operate_name,
+			btn_icon,
+			html,
+			diaplay_in_tool_bar
+		FROM
+			t_rbac_menu menu
+		LEFT JOIN t_rbac_operate operate ON menu.id = operate.menu_id
+		<if test="roleId != null">
+			left join t_link_rbac_menu tlrm on tlrm.menu_id = menu.id 
+		</if>
+		WHERE
+			operate.type = 'unauthorized' 
+		
+		<choose>
+			<when test="upMenuId != null">
+				and up_menu_id = #{upMenuId}
+			</when>
+			<otherwise>
+				and  up_menu_id is null       
+			</otherwise>
+		</choose>
+		
+		<if test="roleId != null">
+			and tlrm.role_id = #{roleId}
+		</if>
+	</select>
+
+
 </mapper>

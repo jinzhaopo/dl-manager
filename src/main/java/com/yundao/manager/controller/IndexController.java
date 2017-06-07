@@ -2,6 +2,7 @@ package com.yundao.manager.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * 
@@ -21,7 +22,7 @@ public class IndexController extends BaseController {
 	 * @return
 	 * @return: String
 	 */
-	@RequestMapping(value = "/index")
+	@RequestMapping(value = { "/", "/index" })
 	public String index() {
 		return "/common/index";
 	}

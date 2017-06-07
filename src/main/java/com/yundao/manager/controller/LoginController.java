@@ -9,6 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.jzp.framework.util.RequestUtil;
+import com.yundao.manager.model.rbac.Admin;
+
 /**
  * 
  * @ClassName: LoginController
@@ -29,7 +32,7 @@ public class LoginController extends BaseController {
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
-		return "common/login";
+		return "/common/login";
 	}
 
 	/**
@@ -62,7 +65,7 @@ public class LoginController extends BaseController {
 		}
 		model.addAttribute("msg", msg);
 		// 此方法不处理登录成功,由shiro进行处理.
-		return "/login";
+		return "/common/login";
 	}
 
 }

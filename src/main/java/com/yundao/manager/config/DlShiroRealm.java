@@ -1,12 +1,15 @@
 package com.yundao.manager.config;
 
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAccount;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.jzp.framework.config.shiro.MyShiroRealm;
@@ -68,7 +71,6 @@ public class DlShiroRealm extends MyShiroRealm {
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 
 		UsernamePasswordToken upToken = (UsernamePasswordToken) token;
-		System.out.println(upToken.getPassword().toString() + "--------" + getName());
 
 		// 获取用户的输入的账号.
 		String username = (String) token.getPrincipal();
@@ -94,7 +96,13 @@ public class DlShiroRealm extends MyShiroRealm {
 		SimpleAccount authenticationInfo = new SimpleAccount(admin, // 用户名
 				admin.getPassword(), // 密码
 				getName() // realm name
+				
 		);
+		
+		
+		Subject currentUser = SecurityUtils.getSubject(); 
+		Session session = currentUser.getSession(); 
+		session.setAttribute("currnt_admin",admin);
 
 		return authenticationInfo;
 	}
